@@ -1,7 +1,12 @@
 
+const env = 'prod'
 
 
-export const baseUrl = 'http://localhost:8000/v1/';
+var baseUrl = 'http://localhost:8000/v1/';
+if (env === 'prod') {
+    baseUrl = 'https://new-way-to-learn.onrender.com/v1/'
+}
+
 
 // http://localhost:8000/v1/student
 // http://localhost:8000/v1/student
