@@ -3,7 +3,7 @@ name: New Way To Learn
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
