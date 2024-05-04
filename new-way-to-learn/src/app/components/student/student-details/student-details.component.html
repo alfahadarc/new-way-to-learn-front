@@ -1,0 +1,63 @@
+<div class="container">
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    
+        <div class="for-group">
+            <mat-form-field class="example-full-width">
+                <mat-label for="name">Name</mat-label>
+                <input matInput placeholder="Ex. 100" #input formControlName="name">
+                <div *ngIf="studentForm.controls['name'].invalid && (studentForm.controls['name'].dirty || studentForm.controls['name'].touched)"
+                    class="alert alert-danger">
+                    Name is required
+                </div>
+            </mat-form-field>
+        </div>
+        
+        <div class="for-group">
+        <mat-form-field class="example-full-width">
+            <mat-label for="father_name">Father's Name</mat-label>
+            <input matInput placeholder="Ex. 100" #input formControlName="father_name">
+            <div *ngIf="studentForm.controls['father_name'].invalid && (studentForm.controls['father_name'].dirty || studentForm.controls['father_name'].touched)"
+                class="alert alert-danger">
+                Father's Name is required
+            </div>
+        </mat-form-field>
+        </div>
+    
+        <div class="for-group">
+        <mat-form-field class="example-full-width">
+            <mat-label for="mother_name">Mother's Name</mat-label>
+            <input matInput placeholder="Ex. 100" #input formControlName="mother_name">
+            <div *ngIf="studentForm.controls['mother_name'].invalid && (studentForm.controls['mother_name'].dirty || studentForm.controls['mother_name'].touched)"
+                class="alert alert-danger">
+                Mother's Name is required
+            </div>
+        </mat-form-field>
+    </div>
+    
+    <div class="for-group">
+        <mat-form-field class="example-full-width">
+            <mat-label for="mobile">Mobile</mat-label>
+            <input matInput placeholder="Ex. 100" #input formControlName="mobile">
+            <div *ngIf="studentForm.controls['mobile'].invalid && (studentForm.controls['mobile'].dirty || studentForm.controls['mobile'].touched)"
+                class="alert alert-danger">
+                Mobile is required
+            </div>
+        </mat-form-field>
+    </div>
+    
+    <div class="for-group">
+        <mat-form-field class="example-full-width">
+            <mat-label for="address">address</mat-label>
+            <input matInput placeholder="Ex. 100" #input formControlName="address">
+            <div *ngIf="studentForm.controls['address'].invalid && (studentForm.controls['address'].dirty || studentForm.controls['address'].touched)"
+                class="alert alert-danger">
+                Address is required
+            </div>
+        </mat-form-field>
+    </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+    </form>
+    
+</div>
