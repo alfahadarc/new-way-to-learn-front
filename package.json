@@ -7,7 +7,8 @@
     "build": "ng build",
     "build:prod": "ng build --configuration=production --base-href=/new-way-to-learn-front/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "bundle-report": "ng build --configuration production  --source-map && source-map-explorer dist/browser/*.js"
   },
   "private": true,
   "dependencies": {

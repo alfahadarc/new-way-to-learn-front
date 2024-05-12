@@ -1,18 +1,15 @@
 
-var env = 'dev'
+import { environment } from "../environments/environment";
 
 
-var baseUrl = 'http://localhost:8000/v1/';
+var baseUrl = '';
 
-if (env === 'prod') {
+if (environment.production) {
     baseUrl = 'https://new-way-to-learn.onrender.com/v1/'
+}else{
+    baseUrl = 'http://localhost:8000/v1/';
 }
 
-
-// http://localhost:8000/v1/student
-// http://localhost:8000/v1/student
-// http://localhost:8000/v1/invoice
-// http://localhost:8000/v1/invoice/
 
 export const studentUrl = baseUrl + 'student';
 export const invoiceUrl = baseUrl + 'invoice';
