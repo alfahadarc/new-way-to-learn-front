@@ -4,6 +4,11 @@
     </button>
     <span>Material UI Tutorial</span>
     <span class="example-spacer"></span>
+    <span id="right">
+        <button mat-icon-button (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </span>
 </mat-toolbar>
 <mat-drawer-container autosize>
     <mat-drawer #drawer opened="true" mode="side" position="start">

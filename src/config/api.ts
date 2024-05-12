@@ -1,5 +1,5 @@
 
-const env = 'prod'
+var env = 'dev'
 
 
 var baseUrl = 'http://localhost:8000/v1/';
@@ -16,3 +16,4 @@ if (env === 'prod') {
 
 export const studentUrl = baseUrl + 'student';
 export const invoiceUrl = baseUrl + 'invoice';
+export const loginUrl = baseUrl + 'auth/login';

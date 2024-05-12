@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   showFiller = false;
+  constructor(private authService:AuthService, private route:Router) {}
+
+  ngOnInit() {}
+
+  logout() {
+    this.authService.logout();
+    this.route.navigateByUrl("/login");
+  }
 }

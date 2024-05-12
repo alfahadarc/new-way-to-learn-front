@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +24,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { GenInvoiceComponent } from './components/invoice/gen-invoice/gen-invoice.component';
 import { StudentDetailsComponent } from './components/student/student-details/student-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { authInterceptor } from './interceptors/auth/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { StudentDetailsComponent } from './components/student/student-details/st
     StudentListComponent,
     StudentAddComponent,
     GenInvoiceComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     HttpClientModule,
@@ -53,7 +57,8 @@ import { StudentDetailsComponent } from './components/student/student-details/st
     MatDatepickerModule,
     MatNativeDateModule,
     provideAnimationsAsync(),
-    
+    {provide: HTTP_INTERCEPTORS, useClass: authInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
