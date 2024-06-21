@@ -1,8 +1,8 @@
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Invoice</mat-card-title>
-        <mat-card-subtitle>id: </mat-card-subtitle>
+        <mat-card-title>Invoice for <i>{{studentName}}</i> </mat-card-title>
+        <mat-card-subtitle>{{date}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
 
@@ -24,8 +24,8 @@
                         class="alert alert-danger">
                         Amount is required
                     </div>
-
                 </mat-form-field>
+
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

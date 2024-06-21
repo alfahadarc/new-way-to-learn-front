@@ -29,6 +29,16 @@
             </mat-form-field>
 
             <mat-form-field>
+              <mat-label for="grade">Grade</mat-label>
+              <input matInput placeholder="Ex. Mia" #input formControlName="grade">
+              <div
+                *ngIf="studentForm.controls['grade'].invalid && (studentForm.controls['grade'].dirty || studentForm.controls['grade'].touched)"
+                class="alert alert-danger">
+                Grade is required
+              </div>
+          </mat-form-field>
+
+            <mat-form-field>
                 <mat-label for="father_name">Father's Name</mat-label>
                 <input matInput placeholder="Ex. Mia" #input formControlName="father_name">
                 <div

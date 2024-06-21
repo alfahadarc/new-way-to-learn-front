@@ -59,11 +59,8 @@ export class StudentListComponent {
       width:'50%',
       panelClass: 'custom-modalbox'
     });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   this.getAllBooks()
-    // });
   }
+  
   show(student: Student){
     const dialogRef = this.dialog.open(StudentDetailsComponent, {
       data: student,

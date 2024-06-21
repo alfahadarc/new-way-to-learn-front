@@ -26,6 +26,7 @@ export class StudentAddComponent {
       mobile: ['',Validators.required],
       address: ['',Validators.required],
       dob:['',Validators.required],
+      grade:['',Validators.required],
     });
   }
 

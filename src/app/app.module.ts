@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -26,6 +26,9 @@ import { GenInvoiceComponent } from './components/invoice/gen-invoice/gen-invoic
 import { StudentDetailsComponent } from './components/student/student-details/student-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { authInterceptor } from './interceptors/auth/auth.interceptor';
+import { ModuleComponent } from './components/module/module.component';
+import { AddmoduleComponent } from './components/module/addmodule/addmodule.component';
+import { ModuleDetailsComponent } from './components/module/module-details/module-details.component';
 
 
 @NgModule({
@@ -40,6 +43,9 @@ import { authInterceptor } from './interceptors/auth/auth.interceptor';
     GenInvoiceComponent,
     StudentDetailsComponent,
     LoginComponent,
+    ModuleComponent,
+    AddmoduleComponent,
+    ModuleDetailsComponent,
   ],
   imports: [
     HttpClientModule,
@@ -47,6 +53,7 @@ import { authInterceptor } from './interceptors/auth/auth.interceptor';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     ToastrModule.forRoot({

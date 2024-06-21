@@ -4,4 +4,8 @@ export interface Invoice {
     month: string;
     amount: number;
     student_id: number;
+    student: {
+        name: string;
+        mobile: string;
+    }
 }

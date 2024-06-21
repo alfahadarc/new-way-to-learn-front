@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
+<mat-toolbar color="primary" class="mat-elevation-z8" >
     <button (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
@@ -10,26 +10,29 @@
         </button>
     </span>
 </mat-toolbar>
-<mat-drawer-container autosize>
-    <mat-drawer #drawer opened="true" mode="side" position="start">
-    <mat-nav-list>
-        <mat-list-item>
-            <button routerLink="dashboard" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+<mat-drawer-container autosize >
+    <mat-drawer #drawer opened="true" mode="side" position="start" >
+    <mat-nav-list >
+        <mat-list-item >
+            <button routerLink="dashboard" mat-button   ><mat-icon>dashboard</mat-icon> Dashboard</button>
         </mat-list-item>
         <mat-list-item>
-            <button routerLink="student" mat-button><mat-icon>explore</mat-icon> Student</button>
+            <button  routerLink="student" mat-button  ><mat-icon>explore</mat-icon> Student</button>
         </mat-list-item>
         <mat-list-item>
-            <button routerLink="invoice" mat-button><mat-icon>table</mat-icon> Invoice</button>
+            <button  routerLink="invoice" mat-button  ><mat-icon>table</mat-icon> Invoice</button>
         </mat-list-item>
         <mat-list-item>
-            <button mat-button><mat-icon>settings</mat-icon> Settings</button>
+            <button  routerLink="module" mat-button  ><mat-icon>library_books</mat-icon> Module</button>
         </mat-list-item>
         <mat-list-item>
-            <button mat-button><mat-icon>help</mat-icon> Help</button>
+            <button  mat-button  ><mat-icon>settings</mat-icon> Settings</button>
         </mat-list-item>
         <mat-list-item>
-            <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
+            <button  mat-button  ><mat-icon>help</mat-icon> Help</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button  mat-button  ><mat-icon>analytics</mat-icon> analytics</button>
         </mat-list-item>
     </mat-nav-list>
     </mat-drawer>

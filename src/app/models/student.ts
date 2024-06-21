@@ -7,4 +7,5 @@ export interface Student {
     address:String;
     mobile:number;
     created_at:Date;
+    grade:number;
 }

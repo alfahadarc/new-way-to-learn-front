@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Invoice } from '../../../models/invoice';
 import { Student } from '../../../models/student';
 import { InvoiceService } from '../../../services/invoice/invoice.service';
@@ -32,13 +32,15 @@ enum Month {
 export class GenInvoiceComponent {
   invoiceForm!: FormGroup;
 
-  // month enum to list
-  months = Object.values(Month);
-  dialogRef: any;
 
-  constructor(private fb:FormBuilder,@Inject(MAT_DIALOG_DATA) public data: Student, private invoiceService:InvoiceService, private toastrService:ToastrService) { }
+  months = Object.values(Month);
+  studentName:String = '';
+  date:String = '';
+
+  constructor(private dialogRef:MatDialogRef<GenInvoiceComponent>,private fb:FormBuilder,@Inject(MAT_DIALOG_DATA) public data: Student, private invoiceService:InvoiceService, private toastrService:ToastrService) { }
 
   ngOnInit() {  
+    this.date = new Date().toDateString();
     this.createForm();
     this.initForm(this.data);
   }
@@ -52,6 +54,7 @@ export class GenInvoiceComponent {
   }
 
   initForm(student: Student) {
+    this.studentName = student.name;
     this.invoiceForm.patchValue({
       student_id: student.id,
     });
@@ -60,15 +63,12 @@ export class GenInvoiceComponent {
     console.log(this.invoiceForm.value);
     this.invoiceService.save(this.invoiceForm.value, this.data.id).subscribe({
       next: (data) => {
-        console.log(data);
-        this.toastrService.success("Successfully Added", "Success")
+        this.toastrService.success('Invoice generated successfully', 'Success')
         this.dialogRef.close();
       },
       error: (error) => {
         console.log(error);
-        this.toastrService.error(error.statusText, "Error",{
-          positionClass: 'toast-bottom-right' 
-       });
+        this.toastrService.error(error.statusText, "Error")
       }
     });
 
