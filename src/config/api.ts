@@ -7,7 +7,7 @@ var baseUrl = '';
 if (environment.production) {
     baseUrl = 'https://new-way-to-learn.onrender.com/v1/';
 }else{
-    baseUrl = 'https://new-way-to-learn.onrender.com/v1/';
+    baseUrl = 'http://localhost:8000/v1/';
 }
 
 
